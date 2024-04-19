@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
+final String assetName = 'assets\Icons\9035711_finger_print_sharp_icon.svg';
+final Widget svg = SvgPicture.asset(
+  assetName,
+  semanticsLabel: 'Acme Logo'
+);
 void main() {
   runApp(const MyApp());
 }
