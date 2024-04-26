@@ -28,6 +28,63 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class SecondRoute extends StatelessWidget {
+  const SecondRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Detalle'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Volver'),
+        ),
+      ),
+    );
+  }
+}
+
+class ThirdRoute extends StatelessWidget {
+  const ThirdRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Lista Detalle'),
+      ),
+      body: 
+      ListView(
+           children: const <Widget>[
+            ListTile(
+              leading: Icon(Icons.map),
+              title: Text('Map'),
+            ),
+            ListTile(
+              leading: Icon(Icons.photo_album),
+              title: Text('Album'),
+            ),
+            ListTile(
+              leading: Icon(Icons.phone),
+              title: Text('Phone'),
+            ),
+            ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Volver'),
+        ),
+          ],
+        )
+    );
+  }
+}
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
@@ -84,20 +141,28 @@ class _MyHomePageState extends State<MyHomePage> {
           maintainSize: true, 
           maintainAnimation: true,
           maintainState: true,
-          visible: false, 
+          visible: true, 
           child: ElevatedButton(
-            onPressed: _incrementCounter,
-            child: const Icon(Icons.add),
+            onPressed: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SecondRoute()));
+            } ,
+            child: const Text('Detalle'),
           )
         ),
         Visibility(
           maintainSize: true, 
           maintainAnimation: true,
           maintainState: true,
-          visible: false, 
+          visible: true, 
           child: ElevatedButton(
-            onPressed: _decreaceCounter,
-            child: const Icon(Icons.remove),
+            onPressed: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ThirdRoute()));
+            },
+            child: const Text('Lista Detalle'),
           )
         )
         ],
@@ -135,6 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       ),
+      
     );
   }
 }
