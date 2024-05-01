@@ -58,29 +58,32 @@ class ThirdRoute extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Lista Detalle'),
       ),
-      body: 
-      ListView(
-           children: const <Widget>[
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Map'),
+      body: Column(
+          children: [
+            ListView(
+              shrinkWrap: true,
+              children: <Widget>[
+                  ListTile(
+                    leading: Icon(Icons.map),
+                    title: Text('Map'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.photo_album),
+                    title: Text('Album'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.phone),
+                    title: Text('Phone'),
+                  ),
+                ElevatedButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Volver'),
             ),
-            ListTile(
-              leading: Icon(Icons.photo_album),
-              title: Text('Album'),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text('Phone'),
-            ),
-            ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Volver'),
-        ),
-          ],
+              ],
+          ),],
         )
+      
+        
     );
   }
 }
