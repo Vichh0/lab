@@ -65,15 +65,15 @@ class ThirdRoute extends StatelessWidget {
               children: <Widget>[
                   ListTile(
                     leading: Icon(Icons.map),
-                    title: Text('Map'),
+                    title: Text('Item 1'),
                   ),
                   ListTile(
                     leading: Icon(Icons.photo_album),
-                    title: Text('Album'),
+                    title: Text('Item 2'),
                   ),
                   ListTile(
                     leading: Icon(Icons.phone),
-                    title: Text('Phone'),
+                    title: Text('Item 3'),
                   ),
                 ElevatedButton(
               onPressed: () => Navigator.pop(context),
@@ -82,8 +82,6 @@ class ThirdRoute extends StatelessWidget {
               ],
           ),],
         )
-      
-        
     );
   }
 }
