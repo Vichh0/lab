@@ -28,14 +28,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({super.key});
+class UserRoute extends StatelessWidget {
+  const UserRoute({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Detalle'),
+        title: const Text('Perfil Usuario'),
       ),
       body: Center(
         child: ElevatedButton(
@@ -49,14 +49,14 @@ class SecondRoute extends StatelessWidget {
   }
 }
 
-class ThirdRoute extends StatelessWidget {
-  const ThirdRoute({super.key});
+class GameRoute extends StatelessWidget {
+  const GameRoute({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lista Detalle'),
+        title: const Text('Detalle Juego'),
       ),
       body: Column(
           children: [
@@ -82,6 +82,27 @@ class ThirdRoute extends StatelessWidget {
               ],
           ),],
         )
+    );
+  }
+}
+
+class RutineRoute extends StatelessWidget {
+  const RutineRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Rutina'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Volver'),
+        ),
+      ),
     );
   }
 }
@@ -147,9 +168,9 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const SecondRoute()));
+              MaterialPageRoute(builder: (context) => const UserRoute()));
             } ,
-            child: const Text('Detalle'),
+            child: const Text('Ver Usuario'),
           )
         ),
         Visibility(
@@ -161,9 +182,23 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const ThirdRoute()));
+              MaterialPageRoute(builder: (context) => const GameRoute()));
             },
-            child: const Text('Lista Detalle'),
+            child: const Text(' Ver detalle Juego'),
+          )
+        ),
+        Visibility(
+          maintainSize: true, 
+          maintainAnimation: true,
+          maintainState: true,
+          visible: true, 
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const RutineRoute()));
+            },
+            child: const Text(' Ver Rutina'),
           )
         )
         ],
