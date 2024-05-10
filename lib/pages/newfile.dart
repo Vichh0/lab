@@ -23,10 +23,70 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Laboratorio 5 '),
+      home: const AccessRoute(),
     );
   }
 }
+
+class AccessRoute extends StatelessWidget {
+  const AccessRoute({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('LIRCAYHUB APP'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextFormField(
+              decoration: const InputDecoration(
+                icon: Icon(Icons.person),
+                labelText: 'user *',
+              ),
+            ),
+            TextFormField(
+              decoration: const InputDecoration(
+                icon: Icon(Icons.add),
+                labelText: 'password *',
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+               Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Home()));
+            },
+             child: const Text('Acceder'),
+             ),
+          ],
+        )
+      ),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Perfil Usuario'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Volver'),
+        ),
+      ),
+    );
+  }
+}
+
 
 class UserRoute extends StatelessWidget {
   const UserRoute({super.key});
