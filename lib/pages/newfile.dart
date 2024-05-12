@@ -72,16 +72,51 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Perfil Usuario'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Volver'),
+      persistentFooterButtons: [
+        Visibility(
+          maintainSize: true, 
+          maintainAnimation: true,
+          maintainState: true,
+          visible: true, 
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const UserRoute()));
+            } ,
+            child: const Text('Usuario'),
+          )
         ),
+        Visibility(
+          maintainSize: true, 
+          maintainAnimation: true,
+          maintainState: true,
+          visible: true, 
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const GameRoute()));
+            } ,
+            child: const Text('Juegos'),
+          )
+        ),
+        Visibility(
+          maintainSize: true, 
+          maintainAnimation: true,
+          maintainState: true,
+          visible: true, 
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const RutineRoute()));
+            } ,
+            child: const Text('Rutinas'),
+          )
+        ),
+      ],
+      body: Center(
       ),
     );
   }
