@@ -66,7 +66,6 @@ class AccessRoute extends StatelessWidget {
     );
   }
 }
-
 class Home extends StatelessWidget {
   const Home({super.key});
   @override
@@ -117,10 +116,14 @@ class Home extends StatelessWidget {
         ),
       ],
       body: Center(
-        ListView(
-          padding: const EdgeInsets.all(8),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Container(
+            Text('Juegos'),
+            ListView(
+              padding: const EdgeInsets.all(8),
+              children: <Widget>[
+                Container(
               height: 50,
               color: Colors.amber[600],
               child: const Center(child: Text('Entry A')),
@@ -137,8 +140,10 @@ class Home extends StatelessWidget {
             ),
           ],
         ),
+          ],
+        ),
       ),
-    );
+      );
   }
 }
 
