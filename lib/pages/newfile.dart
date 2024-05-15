@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lab/Data/Videojuegos.dart';
+import 'package:lab/pages/Acses.dart';
+
 
 const String assetName = 'assets/Icons/9035711_finger_print_sharp_icon.svg';
 const String failIcon = 'assets/Icons/9035909_trending_down_sharp_icon.svg';
@@ -23,151 +26,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
         useMaterial3: true,
       ),
-      home: const AccessRoute(),
+      home: const Access(),
     );
   }
 }
 
-class AccessRoute extends StatelessWidget {
-  const AccessRoute({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('LIRCAYHUB APP'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.person),
-                labelText: 'user *',
-              ),
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: Icon(Icons.add),
-                labelText: 'password *',
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-               Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const Home()));
-            },
-             child: const Text('Acceder'),
-             ),
-          ],
-        )
-      ),
-    );
-  }
-}
-class Home extends StatelessWidget {
-  const Home({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      persistentFooterButtons: [
-        Visibility(
-          maintainSize: true, 
-          maintainAnimation: true,
-          maintainState: true,
-          visible: true, 
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const UserRoute()));
-            } ,
-            child: const Text('Usuario'),
-          )
-        ),
-        Visibility(
-          maintainSize: true, 
-          maintainAnimation: true,
-          maintainState: true,
-          visible: true, 
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const GameRoute()));
-            } ,
-            child: const Text('Juegos'),
-          )
-        ),
-        Visibility(
-          maintainSize: true, 
-          maintainAnimation: true,
-          maintainState: true,
-          visible: true, 
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const RutineRoute()));
-            } ,
-            child: const Text('Rutinas'),
-          )
-        ),
-      ],
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Text('Juegos'),
-            ListView(
-              padding: const EdgeInsets.all(8),
-              children: <Widget>[
-                Container(
-              height: 50,
-              color: Colors.amber[600],
-              child: const Center(child: Text('Entry A')),
-            ),
-            Container(
-              height: 50,
-              color: Colors.amber[500],
-              child: const Center(child: Text('Entry B')),
-            ),
-            Container(
-              height: 50,
-              color: Colors.amber[100],
-              child: const Center(child: Text('Entry C')),
-            ),
-          ],
-        ),
-          ],
-        ),
-      ),
-      );
-  }
-}
 
-
-class UserRoute extends StatelessWidget {
-  const UserRoute({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Perfil Usuario'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Volver'),
-        ),
-      ),
-    );
-  }
-}
 
 class GameRoute extends StatelessWidget {
   const GameRoute({super.key});
@@ -206,26 +70,7 @@ class GameRoute extends StatelessWidget {
   }
 }
 
-class RutineRoute extends StatelessWidget {
-  const RutineRoute({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Rutina'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Volver'),
-        ),
-      ),
-    );
-  }
-}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -279,20 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       persistentFooterButtons: [
-        Visibility(
-          maintainSize: true, 
-          maintainAnimation: true,
-          maintainState: true,
-          visible: true, 
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const UserRoute()));
-            } ,
-            child: const Text('Ver Usuario'),
-          )
-        ),
+        
         Visibility(
           maintainSize: true, 
           maintainAnimation: true,
@@ -307,20 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: const Text(' Ver detalle Juego'),
           )
         ),
-        Visibility(
-          maintainSize: true, 
-          maintainAnimation: true,
-          maintainState: true,
-          visible: true, 
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const RutineRoute()));
-            },
-            child: const Text(' Ver Rutina'),
-          )
-        )
+        
         ],
       body: Center(
         child: Card(

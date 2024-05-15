@@ -1,2 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+class Usuario{
+  String nombre = '';
+  String clave = '';
+  var favoritos = [];
+  Usuario(this.nombre,this.clave,this.favoritos);
+  void verfav(){}
+}
