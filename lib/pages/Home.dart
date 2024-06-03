@@ -11,6 +11,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('HOME'),
+      ),
       persistentFooterButtons: [
         Visibility(
           maintainSize: true, 
@@ -23,7 +26,7 @@ class Home extends StatelessWidget {
               context,
               MaterialPageRoute(builder: (context) => const UserRoute()));
             } ,
-            child: const Text('Usuario'),
+            child: const Text('Info usuario'),
           )
         ),
         Visibility(
@@ -56,14 +59,15 @@ class Home extends StatelessWidget {
         )
       ],
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: Card(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Text('HOME'),
-
+            Text('Usuario: *******'),
           ],
         ),
+        ),
       ),
-      );
+    );
   }
 }

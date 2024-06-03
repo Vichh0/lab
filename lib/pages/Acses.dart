@@ -9,6 +9,7 @@ class Access extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
         title: const Text('LIRCAYHUB APP'),
       ),
       body: Center(

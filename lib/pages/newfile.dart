@@ -124,7 +124,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       persistentFooterButtons: [
-        
         Visibility(
           maintainSize: true, 
           maintainAnimation: true,

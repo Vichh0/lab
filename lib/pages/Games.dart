@@ -11,12 +11,13 @@ class GameRoute extends StatelessWidget{
         title: const Text('Juegos'),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Volver'),
-        ),
+        child: Card(
+          child: Row(
+            children: <Widget>[
+              TextBox("")
+            ],
+          ),
+        )
       ),
     );
   }
