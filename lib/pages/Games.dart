@@ -8,13 +8,13 @@ class GameRoute extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Juegos'),
       ),
       body: Center(
         child: Card(
           child: Row(
             children: <Widget>[
-              TextBox("")
             ],
           ),
         )

@@ -10,53 +10,41 @@ class Home extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style = ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 15));
+
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('HOME'),
       ),
       persistentFooterButtons: [
-        Visibility(
-          maintainSize: true, 
-          maintainAnimation: true,
-          maintainState: true,
-          visible: true, 
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
+        ElevatedButton(
+          style: style,
+          onPressed: () {
+            Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const UserRoute()));
             } ,
-            child: const Text('Info usuario'),
-          )
-        ),
-        Visibility(
-          maintainSize: true, 
-          maintainAnimation: true,
-          maintainState: true,
-          visible: true, 
-          child: ElevatedButton(
+          child: const Text('Info usuario'),
+          ),
+          ElevatedButton(
+            style: style,
             onPressed: () {
               Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const RutineRoute()));
             } ,
             child: const Text('Rutinas'),
-          )
-        ),
-        Visibility(
-          maintainSize: true, 
-          maintainAnimation: true,
-          maintainState: true,
-          visible: true, 
-          child: ElevatedButton(
+          ),
+          ElevatedButton(
+            style: style,
             onPressed: () {
               Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const GameRoute()));
             } ,
             child: const Text('Juegos'),
-          )
-        )
+          ),
       ],
       body: Center(
         child: Card(
