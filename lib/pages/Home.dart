@@ -17,45 +17,45 @@ class Home extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('HOME'),
       ),
-      persistentFooterButtons: [
-        ElevatedButton(
-          style: style,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const UserRoute()));
-            } ,
-          child: const Text('Info usuario'),
-          ),
-          ElevatedButton(
-            style: style,
-            onPressed: () {
-              Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const RutineRoute()));
-            } ,
-            child: const Text('Rutinas'),
-          ),
-          ElevatedButton(
-            style: style,
-            onPressed: () {
-              Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const GameRoute()));
-            } ,
-            child: const Text('Juegos'),
-          ),
-      ],
       body: Center(
-        child: Card(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Text('Usuario: *******'),
-          ],
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Bienvenido a la página principal',
+                style: TextStyle(fontSize: 24),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GameRoute())
+                    );
+                },
+                child: Text('Ir a Juegos'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RutineRoute()),
+                  );
+                },
+                child: Text('Ir a Rutinas'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => UserRoute()),
+                  );
+                },
+                child: Text('Ir a Usuario'),
+              ),
+            ],
+          ),
         ),
-        ),
-      ),
     );
   }
 }

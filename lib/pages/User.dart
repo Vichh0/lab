@@ -12,11 +12,21 @@ class UserRoute extends StatelessWidget {
         title: const Text('Perfil Usuario'),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Volver'),
+        child: Card(
+          child: Column(
+             mainAxisSize: MainAxisSize.min,
+             children: <Widget>[
+              Text('En esta pagina vera su informacion de usuario'),
+              const ListTile(
+                leading: Icon(Icons.account_circle_sharp),
+                title: Text('Nombre Usuario: ********'),
+              ),
+              const ListTile(
+                leading: Icon(Icons.lock_person),
+                title: Text('ID Usuario: ********'),
+              ),
+             ],
+          ),
         ),
       ),
     );
