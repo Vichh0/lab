@@ -14,10 +14,8 @@ Widget svg = SvgPicture.asset(
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  @override
-  void didUpdateWidget (Type oldWidget) {
-   print('didupdatewidget');
-  }
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -60,7 +58,6 @@ _MyHomePageState(){
     print('didchangedependencies');
     super.didChangeDependencies(); 
   }
-
 
   void _incrementCounter() {
     setState(() {
